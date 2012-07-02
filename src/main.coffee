@@ -11,6 +11,13 @@ class Adventurer
     $(window).resize () =>
       @position_frames()
       
+    $(window).keyup (event) =>
+      console.log event.keyCode
+      if event.keyCode == 32 or event.keyCode == 39
+        @next_step() if @current_step_index < @steps.length - 1
+      else if event.keyCode == 37
+        @previous_step() if @current_step_index > 0
+      
     
   add_step: (element, text) ->
     @steps.push
@@ -30,6 +37,8 @@ class Adventurer
     @display_step()
     
   previous_step: ->
+    @current_step_index--
+    @display_step()
     
   render: ->
     for frame in @frames
@@ -55,21 +64,22 @@ class Adventurer
     width = @current_step().width()
     height = @current_step().height()
 
-    $(".adventurer_frame.north").animate 
+    $(".adventurer_frame.north").stop().animate 
       "height": top - (@frame_size / 2), 
       "width": document.width
-    $(".adventurer_frame.south").animate 
+    $(".adventurer_frame.south").stop().animate 
       "height": document.height - height - top - (@frame_size / 2), 
       "width": document.width
-    $(".adventurer_frame.west").animate 
+    $(".adventurer_frame.west").stop().animate 
       "top": top - (@frame_size / 2), 
       "width": left - (@frame_size / 2), 
       "height": height + @frame_size
-    $(".adventurer_frame.east").animate 
-      "top": top - (@frame_size / 2), 
-      "width": left - (@frame_size / 2), 
+    $(".adventurer_frame.east").stop().animate 
+      "top": top - (@frame_size / 2),
+      "left": left + width + (@frame_size / 2),
+      "width": document.width - left - width - (@frame_size / 2), 
       "height": height + @frame_size
-    $(".adventurer_frame.content").animate 
+    $(".adventurer_frame.content").stop().animate 
       "top": top - (@frame_size / 2), 
       "left": left - (@frame_size / 2), 
       "width": width + @frame_size - 1, 

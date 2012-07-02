@@ -12,15 +12,18 @@
 		  $(document).ready(function() {
 		    var adventure = new Adventurer({"with_autoplay": false, "with_navigation": true});
 		    adventure.add_step("#heading", "This is some description of the section");
+		    adventure.add_step("#info", "This is some description of the section 2");
+		    adventure.add_step("#leftInfo", "This is some description of the section 2");
+		    adventure.add_step("#rightInfo", "This is some description of the section 2");
 		    adventure.begin();
 		  });
 		</script>
 	</head>
 	<body>
 	  <div class="some" id="heading" style="width: 100px; margin: 10px auto">Hi! This is a basic example of adventurer.js</div>
-	  <div id="info"> This is some information div</div>
-	  <div id="leftInfo" style="float: left;">This is a left div</div>
-	  <div id="rightInfo" style="float: right;">This is a right div</div>
+	  <div id="info" style="margin: 30px auto; width: 100px; text-align: center;"> This is some information div</div>
+	  <div id="leftInfo" style="float: left; margin-left: 50px;">This is a left div</div>
+	  <div id="rightInfo" style="float: right; margin-right: 50px">This is a right div</div>
 	  <div style="clear: both;"></div>
 	</body>
 </html>
