@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<meta http="" equiv="Content-type" content="text/html; charset=utf-8">
+		<title>
+			Adventurer.js Example
+		</title>
+		<link rel="stylesheet" href="../stylesheets/adventurer.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../lib/main.js"></script>
+		<script type="text/javascript" charset="utf-8">
+		  $(document).ready(function() {
+		    var adventure = new Adventurer({"with_autoplay": false, "with_navigation": true});
+		    adventure.add_step("#heading", "This is some description of the section");
+		    adventure.begin();
+		  });
+		</script>
+	</head>
+	<body>
+	  <div class="some" id="heading" style="width: 100px; margin: 10px auto">Hi! This is a basic example of adventurer.js</div>
+	  <div id="info"> This is some information div</div>
+	  <div id="leftInfo" style="float: left;">This is a left div</div>
+	  <div id="rightInfo" style="float: right;">This is a right div</div>
+	  <div style="clear: both;"></div>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+body.with_adventurer {
+  margin: 0;
+  padding: 0;
+}
+
+.adventurer {
+  
+}
+
+.adventurer_tooltip {
+  
+}
+
+.adventurer_frame {
+  display: none;
+  position: absolute;
+  background-color: #000;
+}
+
+.adventurer_frame.north {
+  top: 0px;
+}
+
+.adventurer_frame.east {
+  right: 0px;
+}
+
+.adventurer_frame.south {
+  bottom: 0px;
+}
+
+.adventurer_frame.west {
+  left: 0px;
+}
+
+.adventurer_frame.content {
+  background: none;
+  border: 1px solid #7CC700;
+}
