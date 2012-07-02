@@ -8,11 +8,11 @@ class Adventurer
     @render()
     @current_step_index = 0
     @frame_size = 10
+    @default_delay = 2000
     $(window).resize () =>
       @position_frames()
       
     $(window).keyup (event) =>
-      console.log event.keyCode
       if event.keyCode == 32 or event.keyCode == 39
         @next_step() if @current_step_index < @steps.length - 1
       else if event.keyCode == 37
@@ -25,12 +25,17 @@ class Adventurer
       "text": text
       
   begin: ->
-    if @with_autoplay
-      console.log "Switching steps automatically"
-    else
-      console.log "Only manual step switch"
     @show()
     @display_step()
+    
+    if @with_autoplay
+      @pid = setInterval () =>
+        if @current_step_index < @steps.length - 1
+          @next_step() 
+        else
+          clearInterval(@pid)
+          @pid = null
+      , @default_delay
     
   next_step: ->
     @current_step_index++
