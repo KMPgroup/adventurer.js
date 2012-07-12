@@ -1,5 +1,7 @@
+jQuery.easing.def = "easeInOutQuint"
 class Adventurer
-  frames: ["north", "east", "south", "west", "content"]
+  # "north", "east", "south", "west", 
+  frames: ["content"]
   
   constructor: (options) ->
     @steps = []
@@ -64,31 +66,57 @@ class Adventurer
     $(".adventurer_frame").css "display": "block"
     
   position_frames: ->
+    window_width = $(window).width()
+    window_height = $(window).height()
+    
     top = @current_step().offset().top
     left = @current_step().offset().left
     width = @current_step().width()
     height = @current_step().height()
-
-    $(".adventurer_frame.north").stop().animate 
-      "height": top - (@frame_size / 2), 
-      "width": document.width
-    $(".adventurer_frame.south").stop().animate 
-      "height": document.height - height - top - (@frame_size / 2), 
-      "width": document.width
-    $(".adventurer_frame.west").stop().animate 
-      "top": top - (@frame_size / 2), 
-      "width": left - (@frame_size / 2), 
-      "height": height + @frame_size
-    $(".adventurer_frame.east").stop().animate 
-      "top": top - (@frame_size / 2),
-      "left": left + width + (@frame_size / 2),
-      "width": document.width - left - width - (@frame_size / 2), 
-      "height": height + @frame_size
-    $(".adventurer_frame.content").stop().animate 
-      "top": top - (@frame_size / 2), 
-      "left": left - (@frame_size / 2), 
+    
+    b_top = top
+    b_bottom = (window_height - ( top + height))
+    b_right = (window_width - ( left + width ))
+    b_left = left
+    # if left > (window_width - ( left + width ))
+    #   border_width = left
+    # else  
+    #   border_width = window_width - ( left + width )
+    # 
+    # if top > (window_height - ( top + height) )
+    #   border_height = top
+    # else
+    #   border_height = (window_height - ( top + height ))
+             
+    # $(".adventurer_frame.north").stop().animate 
+    #   "height": top - (@frame_size / 2), 
+    #   "width": document.width
+    # $(".adventurer_frame.south").stop().animate 
+    #   "height": document.height - height - top - (@frame_size / 2), 
+    #   "width": document.width
+    # $(".adventurer_frame.west").stop().animate 
+    #   "top": top - (@frame_size / 2), 
+    #   "width": left - (@frame_size / 2), 
+    #   "height": height + @frame_size
+    # $(".adventurer_frame.east").stop().animate 
+    #   "top": top - (@frame_size / 2),
+    #   "left": left + width + (@frame_size / 2),
+    #   "width": document.width - left - width - (@frame_size / 2), 
+    #   "height": height + @frame_size
+    $(".adventurer_frame.content").stop().animate
+      "border-top-width": b_top,
+      "border-bottom-width": b_bottom,
+      "border-left-width": b_left,
+      "border-right-width": b_right, 
+      "top": top - (@frame_size / 2) - b_top, 
+      "left": left - (@frame_size / 2) - b_left, 
       "width": width + @frame_size - 1, 
       "height": height + @frame_size - 1
+  
+  animate_step: (time, steps) ->
+    one_step = time/steps
+    
+    
     
   current_step: ->
     $(@steps[@current_step_index].element)

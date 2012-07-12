@@ -1,5 +1,6 @@
 body.with_adventurer {
   margin: 0;
+  overflow: hidden;
   padding: 0;
 }
 
@@ -31,5 +32,6 @@ body.with_adventurer {
 
 .adventurer_frame.content {
   background: none;
-  border: 1px solid #7CC700;
+  
+  border: 0px solid #7CC700;
 }

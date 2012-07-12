@@ -8,9 +8,10 @@
 		<link rel="stylesheet" href="../stylesheets/adventurer.css" type="text/css" media="screen" title="no title" charset="utf-8">
 		<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script type="text/javascript" charset="utf-8" src="../lib/main.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../lib/jquery.easing.js"></script>
 		<script type="text/javascript" charset="utf-8">
 		  $(document).ready(function() {
-		    var adventure = new Adventurer({"with_autoplay": true, "with_navigation": true});
+		    var adventure = new Adventurer({"with_autoplay": false, "with_navigation": true});
 		    adventure.add_step("#heading", "This is some description of the section");
 		    adventure.add_step("#info", "This is some description of the section 2");
 		    adventure.add_step("#leftInfo", "This is some description of the section 2");
