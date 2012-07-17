@@ -5,7 +5,7 @@
 		<title>
 			Adventurer.js Example
 		</title>
-		<link rel="stylesheet" href="../stylesheets/adventurer.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="../stylesheets/adventurer_new.css" type="text/css" media="screen" title="no title" charset="utf-8">
 		<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script type="text/javascript" charset="utf-8" src="../lib/main.js"></script>
 		<script type="text/javascript" charset="utf-8" src="../lib/jquery.easing.js"></script>
@@ -14,8 +14,10 @@
 		    var adventure = new Adventurer({"with_autoplay": false, "with_navigation": true});
 		    adventure.add_step("#heading", "This is some description of the section");
 		    adventure.add_step("#info", "This is some description of the section 2");
-		    adventure.add_step("#leftInfo", "This is some description of the section 2");
-		    adventure.add_step("#rightInfo", "This is some description of the section 2");
+		    adventure.add_step("#leftInfo", "This is some description of the section 3");
+		    adventure.add_step("#rightInfo", "This is some description of the section 4");
+        // adventure.add_hovers();
+        adventure.initialize_navigation();
 		    adventure.begin();
 		  });
 		</script>
@@ -26,5 +28,12 @@
 	  <div id="leftInfo" style="float: left; margin-left: 50px;">This is a left div</div>
 	  <div id="rightInfo" style="float: right; margin-right: 50px">This is a right div</div>
 	  <div style="clear: both;"></div>
+	  <div class = "navigation_toggler">Poka</div>
+	  <div class = "adventurer_navigation"> 
+	    <div class = "a_next_step" style ="float:right">Następny krok</div>
+	    <div class = "a_prev_step" style = "float:right"> Poprzedni krok</div>
+	    <div class = "current_step_count" style = "float:left"></div>
+	    <div class = "current_step_name"></div>
+	  </div>
 	</body>
 </html>

@@ -1,53 +1,41 @@
 body.with_adventurer {
   margin: 0;
   overflow: hidden;
-  padding: 0;
-}
-
-.adventurer_tooltip {
-  
-}
+  padding: 0; }
 
 .adventurer_frame {
   display: none;
   position: absolute;
-  background-color: #000;
-}
+  background-color: black; }
 
 .adventurer_frame.north {
-  top: 0px;
-}
+  top: 0px; }
 
 .adventurer_frame.east {
-  right: 0px;
-}
+  right: 0px; }
 
 .adventurer_frame.south {
-  bottom: 0px;
-}
+  bottom: 0px; }
 
 .adventurer_frame.west {
-  left: 0px;
-}
+  left: 0px; }
 
 .adventurer_frame.content {
   background: none;
-  
-  border: 0px solid rgba(0,0,255,0.5);
-  
-}
+  border: 0px solid rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  background: none !important; }
 
-.navigation_toggler{
+.navigation_toggler {
   position: fixed;
   bottom: 0px;
   width: 50px;
   height: 20px;
   background-color: #c9c9c9;
   right: 50px;
-  z-index: 1000;
-}
+  z-index: 1000; }
 
-.adventurer_navigation{
+.adventurer_navigation {
   position: fixed;
   bottom: -30px;
   width: 100%;
@@ -56,26 +44,23 @@ body.with_adventurer {
   z-index: 1000;
   clear: both;
   font-family: Helvetica;
-  font-size: 12px;
-}
-.adventurer_navigation .a_next_step, .a_prev_step {
-  color: #fff;
+  font-size: 12px; }
+
+.adventurer_navigation .a_next_step, .adventurer_navigation .a_prev_step {
+  color: white;
   width: 100px;
-  height: 30px;
-}
+  height: 30px; }
 
-.current_step_count{
-  color: #fff;
-}
+.current_step_count {
+  color: white; }
 
-.hover{
+.hover {
   position: relative;
   bottom: -35px;
   left: 0%;
   width: auto;
   height: auto;
-  background-color: #ff0;
-  color: #000;
+  background-color: yellow;
+  color: black;
   z-index: 10000;
-  padding: 10px;
-}
+  padding: 10px; }

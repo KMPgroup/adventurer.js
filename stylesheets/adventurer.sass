@@ -1,0 +1,85 @@
+body.with_adventurer 
+  margin: 0
+  overflow: hidden
+  padding: 0
+
+
+.adventurer_tooltip 
+
+
+
+.adventurer_frame 
+  display: none
+  position: absolute
+  background-color: #000
+
+
+.adventurer_frame.north 
+  top: 0px
+
+
+.adventurer_frame.east 
+  right: 0px
+
+
+.adventurer_frame.south 
+  bottom: 0px
+
+
+.adventurer_frame.west 
+  left: 0px
+
+
+.adventurer_frame.content 
+  background: none
+
+  border: 0px solid rgba(0,0,0,0.5)
+  pointer-events: none
+  background: none !important
+
+
+.navigation_toggler
+  position: fixed
+  bottom: 0px
+  width: 50px
+  height: 20px
+  background-color: #c9c9c9
+  right: 50px
+  z-index: 1000
+
+
+.adventurer_navigation
+  position: fixed
+  bottom: -30px
+  width: 100%
+  height: 30px
+  background-color: #2360a4
+  z-index: 1000
+  clear: both
+  font-family: Helvetica
+  font-size: 12px
+
+.adventurer_navigation 
+  .a_next_step, .a_prev_step 
+    color: #fff
+    width: 100px
+    height: 30px
+  // .a_prev_step 
+  //   color: #fff
+  //   width: 100px
+  //   height: 30px
+
+.current_step_count
+  color: #fff
+
+
+.hover
+  position: relative
+  bottom: -35px
+  left: 0%
+  width: auto
+  height: auto
+  background-color: #ff0
+  color: #000
+  z-index: 10000
+  padding: 10px
